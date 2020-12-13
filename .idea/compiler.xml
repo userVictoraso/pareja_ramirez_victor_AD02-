@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JAVA2-SelectBasico" />
+        <module name="AD02_ParejaVictor" />
       </profile>
     </annotationProcessing>
   </component>
