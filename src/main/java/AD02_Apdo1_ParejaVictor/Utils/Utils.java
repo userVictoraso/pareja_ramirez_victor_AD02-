@@ -36,35 +36,40 @@ public class Utils {
 
     //MOSTRAR MENÚ
     public static void showMenu() throws SQLException, ClassNotFoundException {
-        menuOptions();
-        int option = s.nextInt();
-        switch (option) {
-            case 1:
-                Select.showSelect();
-                break;
-            case 2:
-                Utils.setInterval();
-                Function.showFunction(Utils.interval[0], Utils.interval[1]);
-                break;
-            case 3:
-                Utils.setInterval();
-                Procedure.showProcedure(Utils.interval[0], Utils.interval[1]);
-                break;
-            case 4:
-                System.out.println("Adiós.");
-                System.exit(0);
-                break;
+        boolean salir = true;
+        while (salir) {
+            menuOptions();
+            int option = s.nextInt();
+            switch (option) {
+                case 1:
+                    Select.showSelect();
+                    break;
+                case 2:
+                    Utils.setInterval();
+                    Function.showFunction(Utils.interval[0], Utils.interval[1]);
+                    break;
+                case 3:
+                    Utils.setInterval();
+                    Procedure.showProcedure(Utils.interval[0], Utils.interval[1]);
+                    break;
+                case 4:
+                    System.out.println("Adiós.");
+                    System.exit(0);
+                    break;
+            }
         }
+
     }
 
     //MÉTODO PARA MOSTRAR LAS OPCIONES DEL MENÚ
     public static void menuOptions() {
+        System.out.println("***********************************************************************************");
         System.out.println("¿Qué quiere hacer?");
         System.out.println("1.- Mostrar empleados (SELECT)");
         System.out.println("2.- Número de empleados con sueldo específico (FUNCTION)");
         System.out.println("3.- Número de empleados con comisión específica (PROCEDURE)");
         System.out.println("4.- Salir");
-
+        System.out.println("***********************************************************************************");
     }
 
     //MÉTODO PARA ESTABLECER INTERVALO DE DINERO

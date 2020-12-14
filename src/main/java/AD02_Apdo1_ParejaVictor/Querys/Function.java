@@ -15,9 +15,15 @@ public class Function {
 
         }finally {
             PreparedStatement ps = oConn.prepareStatement(Utils.function);
-            ps.setLong(1, minSalary);
-            ps.setLong(2, maxSalary);
-            System.out.printf("Número de empleados cuya comisión está entre " + minSalary + " y " + maxSalary + ": ");
+            if (minSalary > maxSalary){
+                ps.setLong(2, minSalary);
+                ps.setLong(1, maxSalary);
+                System.out.printf("Número de empleados cuya comisión está entre " + maxSalary + " y " + minSalary + ": ");
+            } else {
+                ps.setLong(1, minSalary);
+                ps.setLong(2, maxSalary);
+                System.out.printf("Número de empleados cuya comisión está entre " + minSalary + " y " + maxSalary + ": ");
+            }
             ps.getResultSet();
             rs = ps.executeQuery();
             while (rs.next()){
